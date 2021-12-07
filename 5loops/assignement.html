@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Prompt the user to enter a number
+        // Print all the number to that number 
+        // Skip the number if its a multiple of 3
+        var input = parseInt(prompt("Please enter a number"));
+
+        for(var i=1; i<=input; i++){
+            if(i%3 == 0){
+                continue
+            }
+            document.write("Number is : " + i + "<br/>")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

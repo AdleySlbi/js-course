@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function continuousDisplay(){
+            setInterval(displayDate, 1000);
+        }
+    
+        function displayDate(){
+            var d = new Date();
+            var x = d.toLocaleDateString();
+            var y = d.toLocaleTimeString();
+            var z = d.toLocaleString();
+            document.getElementById("rawInfo").innerHTML = d;
+            document.getElementById("dateInfo").innerHTML = x;
+            document.getElementById("hourInfo").innerHTML = y;
+            document.getElementById("zInfo").innerHTML = z;
+        }
+        
+    </script>
+</head>
+<body onload="continuousDisplay()">
+    <h1>Row date is : </h1>
+    <p id="rawInfo"></p>
+    <h1>Current date is : </h1>
+    <p id="dateInfo"></p>
+    <h1>Current hour is : </h1>
+    <p id="hourInfo"></p>
+    <h1>Current xx is : </h1>
+    <p id="zInfo"></p>
+
+</body>
+</html>

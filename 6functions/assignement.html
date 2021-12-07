@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <script>
+        // Prompt the professor to enter the marks in Maths / Physics / Chemistry 
+        // Average of three subjects
+        // Condition Loop 
+        // Printing grade
+
+        function averageCalc(a, b, c) {
+            return ((a + b + c) / 3)
+        }
+
+        function definingGrade(moy){
+            if (moy < 70) {
+                return "C grade"
+            } else if (moy >= 70 && moy <= 90) {
+                return "B grade"
+            } else if (moy > 90) {
+                return "A grade"
+            } else {
+                alert("Please study bro");
+            }
+        }
+
+        var mathMark = parseInt(prompt("Enter Maths Marks"));
+        var physicsMark = parseInt(prompt("Enter Physicss Marks"));
+        var chemistryMark = parseInt(prompt("Enter Chemistrys Marks"));
+
+        let average = averageCalc(mathMark, physicsMark, chemistryMark);
+
+        let toDisplay = definingGrade(average);
+        document.write("Your grade is : " + toDisplay);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

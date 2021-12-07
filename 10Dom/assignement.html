@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Assignement 8</title>
+    <script>
+        function deleteCellphone(){
+            parentDiv = document.getElementById("productWrapper");
+            child = document.getElementById("cellphoneWrap");
+            parentDiv.removeChild(child);            
+        }
+
+        function addTv(){
+            parentDiv = document.getElementById("productWrapper");
+            child = document.createElement("div");
+            product = document.createElement("span");
+            price = document.createElement("span");
+            product.innerHTML = "TV";
+            price.innerHTML = "300$"
+            child.appendChild(product);
+            child.appendChild(price);
+            parentDiv.appendChild(child);
+        }
+
+    </script>
+</head>
+<body>
+    <div id="productWrapper">
+        <div id="tvWrap">
+            <span>Laptop</span>
+            <span>1000$</span>
+        </div>
+        <div id="cellphoneWrap">
+            <span>Cell Phone</span>
+            <span>500$</span>
+        </div>
+    </div>
+    <div id="btnWrap">
+        <input type="button" value="Delete CellPhone" id="deleteCellphone" onclick="deleteCellphone()">
+        <input type="button" value="Add TV" id="addTv" onclick="addTv()">
+    </div>
+</body>
+</html>

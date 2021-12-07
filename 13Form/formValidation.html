@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /*
+        Function to display the alert. 
+        Challenged myself on the getElementById elements. 
+        */
+        function alertMessage(formInput) {
+            parentDiv = document.getElementById(formInput);
+            child = document.createElement("span");
+            child.innerHTML = formInput + "is mandatory";
+            child.style.color = "red";
+            child.id = formInput + "error";
+            parentDiv.style = "display : flex; flex-direction: column; max-width: 140px"
+            parentDiv.appendChild(child);
+            return
+        }
+
+
+        /*
+        Function to delete the alert of empty field. 
+        */
+        function deleteErrorMsg(formInput) {
+            if (formInput.value != null) {
+                parentDiv = document.getElementById(formInput.name);
+                childToDelete = document.getElementById(formInput.name + "error")
+                parentDiv.removeChild(childToDelete)
+            }
+
+        }
+
+        /*
+        Check if the form can be validate
+        */
+        function validate() {
+            var email = document.myForm.email.value;
+            var password = document.myForm.password.value;
+
+            if (email == "") {
+                alertMessage("email")
+                return false;
+            } else if (password == "") {
+                alertMessage("password")
+                return false;
+            } else {
+                alert("Validation sucessfull");
+                return true
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h3>User registration:</h3>
+    <form name="myForm" action="registration.jsp" onSubmit="return validate()">
+        <div id="email">
+            <!-- On focus is used to display the error message when the input is clicked. -->
+            Email : <input type="text" name="email" onfocus="deleteErrorMsg(this)" />
+        </div>
+        <div id="password">
+            Password : <input type="password" name="password" onfocus="deleteErrorMsg(this)" />
+        </div>
+        <input type="submit" value="register">
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function handleRemove(pToRem, el){
+            console.log(el)
+            var parent = document.getElementById("div1");
+            var child = document.getElementById(pToRem);
+            parent.removeChild(child);
+            var parentButt = document.getElementById("div2");
+            var childButt = document.getElementById(el);
+            parentButt.removeChild(childButt);
+        }
+
+        function handleCreate(p){
+            var parent = document.getElementById("div1");
+            var child = document.createElement("p");
+            var text =  document.createTextNode("Hello I will be P3");
+            child.appendChild(text);
+            console.log(child);
+            parent.appendChild(child);
+        }
+        
+    </script>
+
+</head>
+<body>
+    <div id="div1">
+        <p id="p1">P1</p>
+        <p id="p2">P2</p>
+    </div>
+    <div id="div2">
+        <input type="button" id="remP1" value="remove p1" onclick="handleRemove('p1', this.id)"/>
+        <input type="button" id="remP2" value="remove p2" onclick="handleRemove('p2', this.id)"/>
+        <input type="button" id="remP2" value="create" onclick="handleCreate()"/>
+    </div>
+    
+
+</body>
+</html>

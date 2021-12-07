@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading</title>
+    <script>
+        var jsMark = parseInt(prompt("please enter the JS Marks"));
+        var javaMark = parseInt(prompt("please enter the Java Marks"));
+        var netMark = parseInt(prompt("please enter the .net Marks"));
+
+        var total = jsMark + javaMark + netMark;
+
+        document.write("Total Marks : " + total + "<br/>"); 
+
+        var average = total/3;
+        document.write("Average : " + average + "<br/>");
+
+        if(jsMark >= 35 && javaMark >= 35 && netMark >= 35){
+            document.write("Result : Passed" + "<br/>");
+            if(average >= 35 && average < 60){
+                document.write("Grade : C")
+            } else if(average >= 60 && average < 70) {
+                document.write("Grade : B")
+            } else {
+                document.write("Grade : A")
+            }
+        }else{
+            document.write("Result:Failed")
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

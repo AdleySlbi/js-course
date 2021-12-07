@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function handleOnChangeEvent(x){
+            document.bgColor = x;
+        }
+
+        function handleOnChangeEventWebsite(z){
+            window.location = z
+        }
+
+        function handleOnChangeEventImg(y){
+            document.body.style.backgroundImage = "url('" + y + "')";
+        }
+    </script>
+</head>
+<body>
+    <select onchange="handleOnChangeEvent(this.value)">
+        <option value="">Select a color</option>
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+    </select>
+    
+    <select onchange="handleOnChangeEventWebsite(this.value)">
+        <option value="">Select a Website</option>
+        <option value="http://adleysalabi.com">Adley SALABI</option>
+        <option value="http://www.google.com">Google</option>
+    </select>
+    
+    <select onchange="handleOnChangeEventImg(this.value)">
+        <option value="">Select a Color</option>
+        <option value="../assets/img/grey1.png">Grey 1</option>
+        <option value="../assets/img/grey2.png">Grey 2</option>
+        <option value="../assets/img/grey3.png">Grey 3</option>
+    </select>
+</body>
+</html>
