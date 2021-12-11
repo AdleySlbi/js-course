@@ -1,18 +1,4 @@
-<!-- Regular Expression Brackets :
-List : 
--->
 
-<!-- Regular Expression Metacharacters : 
-List : 
--->
-
-<!-- Regular Expression Literals :  
-
--->
-
-<!-- Regular Expression Modifiers :  
-
--->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,17 +14,18 @@ List :
         Check if the form can be validate
         */
         function validate() {
-            var exp = /^[A-Za-z]+$/
-            var userName = document.myForm.uname.value;
+            // {Range of element in the input}
+            var exp = /^[A-Za-z0-9\s]{3,10}$/
+            var adress = document.myForm.adress.value;
             // True if the regular expresion is respected and false if not respected
-            var result = exp.test(userName);
+            var result = exp.test(adress);
             console.log(result);
 
             if(result){
                 alert("Valdiation successful");
             } else {
-                alert("Validation failed");
-                document.myForm.uname.focus();
+                document.getElementById("err").innerHTML= "Please enter alpha numeric values only";
+                document.myForm.adress.focus();
                 return false;
             }
         }
@@ -49,8 +36,8 @@ List :
     <h3>Select a technology : </h3>
     <form name="myForm" action="numbers.php" onSubmit="return validate()">
 
-        User Name: <input type="text" name="uname">
-
+        Adress: <textarea type="text" name="adress"></textarea>
+        <b id=err></b><br>
         <input type="submit" value="submit">
     </form>
 
