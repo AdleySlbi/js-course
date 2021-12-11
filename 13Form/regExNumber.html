@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /*
+        Check if the form can be validate
+        */
+        function validate() {
+            // {Range of element in the input}
+            var exp = /^[A-Za-z0-9\s]{3,10}$/
+            var adress = document.myForm.adress.value;
+            // True if the regular expresion is respected and false if not respected
+            var result = exp.test(adress);
+            console.log(result);
+
+            if(result){
+                alert("Valdiation successful");
+            } else {
+                document.getElementById("err").innerHTML= "Please enter alpha numeric values only";
+                document.myForm.adress.focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Select a technology : </h3>
+    <form name="myForm" action="numbers.php" onSubmit="return validate()">
+
+        Adress: <textarea type="text" name="adress"></textarea>
+        <b id=err></b><br>
+        <input type="submit" value="submit">
+    </form>
+
+</body>
+
+</html>

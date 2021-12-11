@@ -28,12 +28,14 @@
         Function to delete the alert of empty field. 
         */
         function deleteErrorMsg(formInput) {
-            if (formInput.value != null) {
+            if (formInput.value != "") {
+                console.log(formInput.value)
                 parentDiv = document.getElementById(formInput.name);
                 childToDelete = document.getElementById(formInput.name + "error")
                 parentDiv.removeChild(childToDelete)
+                return
             }
-
+            return
         }
 
         /*
@@ -44,13 +46,17 @@
             var password = document.myForm.password.value;
 
             if (email == "") {
-                alertMessage("email")
+                alertMessage("email");
+                // Return false so the form is not sent
+                document.myForm.email.focus();
                 return false;
             } else if (password == "") {
-                alertMessage("password")
+                alertMessage("password");
+                document.myForm.password.focus();
                 return false;
             } else {
                 alert("Validation sucessfull");
+                // Return true so the form is not sent
                 return true
             }
         }
